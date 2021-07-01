@@ -13,6 +13,7 @@ app.use(express.static('public'));
 app.use(express.json());
 // initialize routes
 app.use('/api',require('./routes/api'));
+app.use('/cat',require('./routes/catApi'));
 
 // error handling middleware
 app.use(function(err,req,res,next){

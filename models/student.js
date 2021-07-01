@@ -17,7 +17,11 @@ const StudentSchema = new Schema({
     sex: {
         type: String,
         required: [true, 'Sex field is required']
-    }
+    },
+    cat: [{
+        type: Schema.Types.ObjectId,
+        ref: "cat"
+    }]
 });
 
 const Student = mongoose.model('student',StudentSchema);
