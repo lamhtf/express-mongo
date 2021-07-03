@@ -1,0 +1,19 @@
+version: "3"
+services:
+  api:
+    build: .
+    ports:
+      - "8088:4000"
+    depends_on:
+      - db
+    container_name: node-backend
+#   client:
+#     build: ./services/client
+#     ports:
+#       - "80:80"
+#     container_name: blog-client
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    container_name: node-db

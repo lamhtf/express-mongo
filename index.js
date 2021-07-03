@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 // connect to mongodb
-mongoose.connect('mongodb://localhost/ourdata');
+mongoose.connect('mongodb://node-db/ourdata');
 mongoose.Promise = global.Promise;
 
 app.use(express.static('public'));
@@ -22,6 +22,6 @@ app.use(function(err,req,res,next){
 });
 
 // listen for requests
-app.listen(process.env.port || 4000, function(){
-    console.log('Ready to Go!');
+app.listen(process.env.port || 4000, function(){    
+    console.log('Ready to Go! port:', process.env.port || 4000);
 });
